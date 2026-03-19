@@ -1,3 +1,15 @@
+def sumar(a,b):
+    return a + b
+def restar(a,b):
+    return a- b
+def multiplicar(a,b):
+    return a * b
+def dividir(a,b):
+    if b == 0:
+        return "Error, no se puede dividir entre 0"
+    return a / b
+def porcentaje(a,b):
+    return (a * b) / 100
 salida = " "
 while salida != ("salir"):
     print("===Calculadora Simple===")
@@ -11,22 +23,18 @@ while salida != ("salir"):
         print("Error, solo puedes ingresar numeros")
         exit()
     if operacion.lower() == ("suma") :
-        resultado = numero1 + numero2
+        resultado = sumar(numero1 , numero2)
         print("El resultado es: ", resultado)
     elif operacion.lower() == ("resta") :
-        resultado = numero1 - numero2
+        resultado = restar(numero1, numero2)
         print("El resultado es: ", resultado)
     elif operacion.lower() == ("multiplicar") :
-        resultado = numero1 * numero2
+        resultado = multiplicar(numero1, numero2)
         print("El resultado es: ", resultado)
     elif operacion.lower() == ("division") :
-        try:
-            resultado = numero1 / numero2
+            resultado = dividir(numero1, numero2)
             print("El resultado es: ", resultado)
-        except ZeroDivisionError:
-            print("Error, no se puede dividir entre 0")
-            exit()
     elif operacion.lower() == ("porcentaje"):
-        resultado = (numero1 * numero2) / 100
+        resultado = porcentaje(numero1, numero2)
         print("El %",numero2, "de" , numero1, "es: ", resultado)
     salida = input("Quiere salir? (escriba salir): ") .lower()
